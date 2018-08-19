@@ -1,0 +1,29 @@
+{
+  "name": "bargamutru",
+  "version": "0.1.0",
+  "description": "Мой персональный сайт",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc report --reporter html --reporter text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/Bargamut/bargamutru/src"
+  },
+  "author": {
+    "name": "Paul Petrov",
+    "email": "paul@bargamut.ru",
+    "url": "https://bargamut.ru"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-convert-encoding": "Bargamut/gulp-convert-encoding.git#v2.0.0-pullrequest",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  }
+}
