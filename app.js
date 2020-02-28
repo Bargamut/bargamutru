@@ -1,15 +1,15 @@
 const $appContainer = document.querySelector(`.app`);
 
 $appContainer.innerHTML = `
-	<main class="container">
-		<header>
-			<nav class="navbar navbar-dark bg-dark">
+	<header class="bg-dark">
+		<section class="container">
+			<nav class="navbar navbar-dark">
 				<a class="navbar-brand" href="/">Bargamut</a>
-
+				
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
+				
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
@@ -21,8 +21,10 @@ $appContainer.innerHTML = `
 					</ul>
 				</div>
 			</nav>
-		</header>
+		</section>
+	</header>
 
+	<main class="container">
 		<section class="card-deck">
 			<section class="card vk">
 				<img src="/assets/decor/logos/vk.png" alt="VK logo" class="card-img">
@@ -30,6 +32,8 @@ $appContainer.innerHTML = `
 				<div class="card-body">
 					<h5 class="card-title">ВКонтакте</h5>
 					<p class="card-text">Здесь меня можно найти во ВКонтакте</p>
+					
+					<a href="https://vk.bargamut.ru/" class="btn btn-block btn-primary">Найти</a>
 				</div>
 			</section>
 
@@ -39,6 +43,8 @@ $appContainer.innerHTML = `
 				<div class="card-body">
 					<h5 class="card-title">Facebook</h5>
 					<p class="card-text">Здесь меня можно найти в Facebook</p>
+					
+					<a href="https://fb.bargamut.ru/" class="btn btn-block btn-primary">Найти</a>
 				</div>
 			</section>
 
@@ -48,6 +54,8 @@ $appContainer.innerHTML = `
 				<div class="card-body">
 					<h5 class="card-title">Instagram</h5>
 					<p class="card-text">Здесь меня можно найти в Instagram</p>
+
+					<a href="https://instagram.bargamut.ru/" class="btn btn-block btn-primary">Найти</a>
 				</div>
 			</section>
 			
@@ -57,11 +65,15 @@ $appContainer.innerHTML = `
 				<div class="card-body">
 					<h5 class="card-title">Twitter</h5>
 					<p class="card-text">Здесь меня можно найти в Twitter</p>
+
+					<a href="https://twitter.com/bargamut" class="btn btn-block btn-primary">Найти</a>
 				</div>
 			</section>
 		</section>
-
-		<footer>
+	</main>
+	
+	<footer>
+		<section class="container text-muted">
 			2020 &copy; Paul "Bargamut" Petrov. All rights reserved.
-		</footer>
-	</main>`;
+		</section>
+	</footer>`;
