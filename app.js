@@ -1,7 +1,7 @@
 const $appContainer = document.querySelector(`.app`);
 
 $appContainer.innerHTML = `
-	<main class="container bg-dark">
+	<main class="container">
 		<header>
 			<nav class="navbar navbar-dark bg-dark">
 				<a class="navbar-brand" href="/">Bargamut</a>
@@ -25,7 +25,7 @@ $appContainer.innerHTML = `
 
 		<section class="card-deck">
 			<section class="card vk">
-				<img src="..." alt="..." class="card-img">
+				<img src="/assets/decor/logos/vk.png" alt="VK logo" class="card-img">
 
 				<div class="card-body">
 					<h5 class="card-title">ВКонтакте</h5>
@@ -34,7 +34,7 @@ $appContainer.innerHTML = `
 			</section>
 
 			<section class="card fb">
-				<img src="..." alt="..." class="card-img">
+				<img src="/assets/decor/logos/fb.jpg" alt="Facebook logo" class="card-img">
 
 				<div class="card-body">
 					<h5 class="card-title">Facebook</h5>
@@ -43,7 +43,7 @@ $appContainer.innerHTML = `
 			</section>
 
 			<section class="card instagram">
-				<img src="..." alt="..." class="card-img">
+				<img src="/assets/decor/logos/instagram.svg" alt="Instagram logo" class="card-img">
 
 				<div class="card-body">
 					<h5 class="card-title">Instagram</h5>
@@ -52,7 +52,7 @@ $appContainer.innerHTML = `
 			</section>
 			
 			<section class="card tw">
-				<img src="..." alt="..." class="card-img">
+				<img src="/assets/decor/logos/twitter.svg" alt="Twitter logo" class="card-img">
 
 				<div class="card-body">
 					<h5 class="card-title">Twitter</h5>
