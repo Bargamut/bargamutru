@@ -1,4 +1,4 @@
-var operations = require('..');
+var operations = require('./index');
 
 it('should multiply two numbers', function () {
   var expectedResult = 15;
