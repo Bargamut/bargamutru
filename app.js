@@ -74,6 +74,6 @@ $appContainer.innerHTML = `
 	
 	<footer>
 		<section class="container text-muted">
-			2020 &copy; Paul "Bargamut" Petrov. All rights reserved.
+			&copy; 2020 Paul "Bargamut" Petrov. All rights reserved.
 		</section>
 	</footer>`;
