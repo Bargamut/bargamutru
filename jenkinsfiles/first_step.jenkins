@@ -8,6 +8,9 @@ pipeline {
 	agent {
 		label 'master'
 	}
+	triggers {
+		pollSCM('* * * * *')
+	}
 	options {
 		buildDiscarder(
 			logRotator(
@@ -21,15 +24,7 @@ pipeline {
 		stage("First step") {
 			steps {
 				echo "================ FIRST STEP ================"
-				withCredentials([
-					sshUserPrivateKey(
-						credentialsId: 'JKNS-BOT',
-						keyFileVariable: 'JKNS_BOT_KEY',
-						usernameVariable: 'JKNS_BOT_USER'
-					)
-				]) {
-					sh 'ssh $JKNS_BOT_USER@localhost \'hostname\''
-				}
+				ls -lpha
 			}
 		}
 	}
