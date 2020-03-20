@@ -20,7 +20,7 @@ pipeline {
 	stages {
 		stage("First step") {
 			steps {
-				echo "================ FIRST STEP 1 ================"
+				echo "================ FIRST STEP ================"
 				sh 'ls -lpha'
 			}
 		}
