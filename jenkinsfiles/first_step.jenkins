@@ -1,0 +1,36 @@
+#!groovy
+// Check properies
+properties([
+	disableConcurrentBuilds()
+])
+
+pipeline {
+	agent {
+		label 'master'
+	}
+	options {
+		buildDiscarder(
+			logRotator(
+				numToKeepStr: '10',
+				artifactNumToKeepStr: '10'
+			)
+		)
+		timestamps()
+	}
+	stages {
+		stage("First step") {
+			steps {
+				echo "================ FIRST STEP ================"
+				withCredentials([
+					sshUserPrivateKey(
+						credentialsId: 'JKNS-BOT',
+						keyFileVariable: 'JKNS_BOT_KEY',
+						usernameVariable: 'JKNS_BOT_USER'
+					)
+				]) {
+					sh 'ssh $JKNS_BOT_USER@localhost \'hostname\''
+				}
+			}
+		}
+	}
+}
