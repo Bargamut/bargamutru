@@ -21,7 +21,7 @@ pipeline {
 		stage("First step") {
 			steps {
 				echo "================ FIRST STEP ================"
-				sh 'yarn i && ls -lpha'
+				sh 'ls -lpha'
 			}
 		}
 	}
