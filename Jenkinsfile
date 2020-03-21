@@ -1,8 +1,9 @@
 pipeline {
   agent {
     docker {
-      args '-p 3000:3000'
       image 'node:13.10.1-alpine'
+      args '''-u jenkins:jenkins
+-p 3000:3000'''
     }
 
   }
