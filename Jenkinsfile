@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:13.10.1-alpine'
-      args '-v /var/www/bargamut.ru/www:/public'
+      args '-v /var/www/bargamut.ru/www:public'
     }
 
   }
