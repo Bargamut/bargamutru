@@ -6,7 +6,7 @@ pipeline {
 -v /var/www/bargamut.ru/www:$WORKSPACE/2deliver
 -v /etc/passwd:/etc/passwd
 -v /etc/group:/etc/group
---user="www-data:www-data"
+--user=www-data:www-data
 '''
     }
 
