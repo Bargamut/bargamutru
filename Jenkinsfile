@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:13.10.1-alpine'
-      args '-v /var/www/bargamutru/www:/public'
+      args '-v /var/www/bargamut.ru/www:/public'
     }
 
   }
@@ -23,6 +23,7 @@ npm install
 
     stage('Deliver') {
       steps {
+				sh 'ls -lpha'
         input 'Do you want to deliver?'
         sh 'echo "Done!"'
       }
