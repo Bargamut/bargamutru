@@ -20,10 +20,6 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "coveralls": "^3.0.2",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-convert-encoding": "Bargamut/gulp-convert-encoding.git#v2.0.0-pullrequest",
-    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2"
   }
