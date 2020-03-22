@@ -26,7 +26,7 @@ npm install
 				sh 'ls -lpha public/'
 				sh 'ls -lpha'
 				sh 'ls -lpha ../'
-				sh 'ls -lpha /'
+				sh 'ls -lpha /var/'
         input 'Do you want to deliver?'
         sh 'echo "Done!"'
       }
