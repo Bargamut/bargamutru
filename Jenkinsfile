@@ -24,6 +24,8 @@ npm install
     stage('Deliver') {
       steps {
 				sh 'ls -lpha'
+				sh 'ls -lpha ../'
+				sh 'ls -lpha public/'
         input 'Do you want to deliver?'
         sh 'echo "Done!"'
       }
