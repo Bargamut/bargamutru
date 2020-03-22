@@ -2,23 +2,15 @@ pipeline {
   agent {
     docker {
       image 'node:13.10.1-alpine'
-      args '''
-				-v /var/www/bargamutru/www:/public
-			'''
+      args '-v /var/www/bargamutru/www:/public'
     }
 
   }
-
-  environment {
-    HOME = '.'
-  }
-	
   stages {
     stage('Install') {
       steps {
-        sh '''
-					npm cache clean --force
-					npm install
+        sh '''npm cache clean --force
+npm install
 				'''
       }
     }
@@ -29,11 +21,15 @@ pipeline {
       }
     }
 
-		stage('Deliver') {
-			steps {
-				input message: "Do you want to deliver?"
-				sh 'ls -lpha /var/www/'
-			}
-		}
+    stage('Deliver') {
+      steps {
+        input 'Do you want to deliver?'
+        sh 'echo "Done!"'
+      }
+    }
+
+  }
+  environment {
+    HOME = '.'
   }
 }
