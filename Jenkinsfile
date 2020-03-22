@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''ls -lpha /.npm
+        sh '''ls -lpha
 cat /etc/passwd
 npm install'''
       }
