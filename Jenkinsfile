@@ -6,6 +6,11 @@ pipeline {
     }
 
   }
+
+  environment {
+    HOME = '.'
+  }
+	
   stages {
     stage('Install') {
       steps {
@@ -18,11 +23,15 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'npm build --production'
+        sh 'npm run build'
       }
     }
-  }
-  environment {
-    HOME = '.'
+
+		stage('Deliver') {
+			steps {
+				input message: "Do you want to deliver?"
+				sh 'ls -lpha /var/www/'
+			}
+		}
   }
 }
