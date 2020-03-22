@@ -2,7 +2,8 @@ pipeline {
   agent {
     docker {
       image 'node:13.10.1-alpine'
-      args '-v /var/www/bargamut.ru/www:$WORKSPACE/2deliver:rw'
+      args '''-v /var/www/bargamut.ru/www:$WORKSPACE/2deliver
+-u $(id -u):$(id -g)'''
     }
 
   }
@@ -10,8 +11,7 @@ pipeline {
     stage('Install') {
       steps {
         sh '''npm cache clean --force
-npm install
-				'''
+npm install'''
       }
     }
 
@@ -23,9 +23,9 @@ npm install
 
     stage('Deliver') {
       steps {
-				sh 'ls -lpha'
-				sh 'ls -lpha public/'
-				sh 'ls -lpha 2deliver/'
+				sh '''ls -lpha
+ls -lpha public/
+ls -lpha 2deliver/'''
         input 'Do you want to deliver?'
 				sh 'cp -R public/* 2deliver/'
 				sh 'ls -lpha 2deliver/'
