@@ -6,7 +6,6 @@ pipeline {
 -v /var/www/bargamut.ru/www:$WORKSPACE/2deliver
 -v /etc/passwd:/etc/passwd
 -v /etc/group:/etc/group
---user=www-data:www-data
 '''
     }
 
@@ -27,6 +26,8 @@ npm install'''
 
     stage('Deliver') {
       steps {
+				sh 'cat /etc/passwd'
+				sh 'cat /etc/group'
 				sh '''ls -lpha
 ls -lpha public/
 ls -lpha 2deliver/'''
