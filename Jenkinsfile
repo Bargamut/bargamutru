@@ -9,8 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''ls -lpha
-cat /etc/passwd
+        sh '''npm cache clean --force
 npm install'''
       }
     }
