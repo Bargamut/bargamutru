@@ -2,8 +2,12 @@ pipeline {
   agent {
     docker {
       image 'node:13.10.1-alpine'
-      args '''-v /var/www/bargamut.ru/www:$WORKSPACE/2deliver
--u $(id -u):$(id -g)'''
+      args '''
+-v /var/www/bargamut.ru/www:$WORKSPACE/2deliver
+-v /etc/passwd:/etc/passwd
+-v /etc/group:/etc/group
+--user="$(id -u):$(id -g)"
+'''
     }
 
   }
