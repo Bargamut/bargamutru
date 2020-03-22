@@ -7,13 +7,20 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
+    stage('Install') {
       steps {
-        sh '''npm cache clean --force
-npm install'''
+        sh '''
+					npm cache clean --force
+					npm install
+				'''
       }
     }
 
+    stage('Build') {
+      steps {
+        sh 'npm build --production'
+      }
+    }
   }
   environment {
     HOME = '.'
