@@ -17,18 +17,18 @@ npm install
 
     stage('Build') {
       steps {
-				sh 'ls -lpha public/'
-				sh 'ls -lpha'
         sh 'npm run build'
       }
     }
 
     stage('Deliver') {
       steps {
-				sh 'ls -lpha public/'
 				sh 'ls -lpha'
-				sh 'ls -lpha ../'
-				sh 'ls -lpha /var/'
+				sh 'ls -lpha public/'
+				sh 'ls -lpha 2deliver/'
+        input 'Do you want to deliver?'
+				sh 'cp -R public/* 2deliver/'
+				sh 'ls -lpha 2deliver/'
         input 'Do you want to deliver?'
         sh 'echo "Done!"'
       }
