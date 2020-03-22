@@ -17,6 +17,8 @@ npm install
 
     stage('Build') {
       steps {
+				sh 'ls -lpha public/'
+				sh 'ls -lpha'
         sh 'npm run build'
       }
     }
