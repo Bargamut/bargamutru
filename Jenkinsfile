@@ -6,6 +6,9 @@ pipeline {
   stages {
     stage('Build Docker image') {
 			steps {
+				sh 'whoami'
+				sh 'ls -lpha'
+				sh 'ls -lpha scripts/'
       	sh 'scripts/build-container.sh'
 			}
     }
@@ -17,8 +20,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    HOME = '.'
   }
 }
