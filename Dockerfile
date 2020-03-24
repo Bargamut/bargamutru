@@ -25,6 +25,6 @@ COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 # Copy build files from first image to nginx dir
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /usr/src/app/dist/ /usr/share/nginx/html/
+COPY --from=builder /usr/src/app/public/ /usr/share/nginx/html/
 
 CMD ["nginx", "-g", "daemon off;"]
