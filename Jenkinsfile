@@ -8,7 +8,7 @@ pipeline {
 			steps {
       	sh '''docker build \
 -t bargamut/bargamut-site:latest \
--t bargamut/bargamut-site:$BUILD_ID \
+-t bargamut/bargamut-site:build-$BUILD_ID \
 .
 '''
 			}
