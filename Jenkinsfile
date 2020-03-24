@@ -1,38 +1,21 @@
 pipeline {
   agent {
-    docker {
-      image 'node:13.10.1-alpine'
-      args '''
--v /var/www/bargamut.ru/www:$WORKSPACE/2deliver
--v /etc/passwd:/etc/passwd
--v /etc/group:/etc/group
-'''
-    }
+		label 'master'
+	}
 
-  }
   stages {
-    stage('Install') {
-      steps {
-        sh '''npm cache clean --force
-npm install'''
-      }
-    }
-
-    stage('Build') {
-      steps {
-        sh 'npm run build'
-      }
+    stage('Build Docker image') {
+			steps {
+      	sh '''docker build \
+-t bargamut/bargamut-site:latest \
+-t bargamut/bargamut-site:$BUILD_ID \
+.
+'''
+			}
     }
 
     stage('Deliver') {
       steps {
-				sh 'cat /etc/passwd'
-				sh 'cat /etc/group'
-				sh '''ls -lpha
-ls -lpha public/'''
-        input 'Do you want to deliver?'
-				sh 'ls -lpha 2deliver/'
-				sh 'whoami && cp -R public/* 2deliver/'
         input 'Do you want to deliver?'
         sh 'echo "Done!"'
       }
