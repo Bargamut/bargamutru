@@ -32,7 +32,6 @@ npm install'''
 ls -lpha public/
 ls -lpha 2deliver/'''
         input 'Do you want to deliver?'
-				sh 'chown -R www-data:www-data public/*'
 				sh 'cp -R public/* 2deliver/'
 				sh 'ls -lpha 2deliver/'
         input 'Do you want to deliver?'
