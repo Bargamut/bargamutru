@@ -29,11 +29,10 @@ npm install'''
 				sh 'cat /etc/passwd'
 				sh 'cat /etc/group'
 				sh '''ls -lpha
-ls -lpha public/
-ls -lpha 2deliver/'''
+ls -lpha public/'''
         input 'Do you want to deliver?'
-				sh 'cp -R public/* 2deliver/'
 				sh 'ls -lpha 2deliver/'
+				sh 'whoami && cp -R public/* 2deliver/'
         input 'Do you want to deliver?'
         sh 'echo "Done!"'
       }
