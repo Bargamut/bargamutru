@@ -6,18 +6,14 @@ pipeline {
   stages {
     stage('Build Docker image') {
 			steps {
-      	sh '''docker build \
--t bargamut/bargamut-site:latest \
--t bargamut/bargamut-site:build-$BUILD_ID \
-.
-'''
+      	sh 'scripts/build-container.sh'
 			}
     }
 
-    stage('Deliver') {
+    stage('Delivery') {
       steps {
-        input 'Do you want to deliver?'
-        sh 'echo "Done!"'
+        input 'Do you want to delivery?'
+        sh 'scripts/delivery.sh'
       }
     }
 
