@@ -19,7 +19,7 @@ pipeline {
 
 		stage('Clean') {
 			steps {
-				sh 'scripts/delivery.sh'
+				sh 'scripts/clean-images.sh'
 			}
 		}
   }
