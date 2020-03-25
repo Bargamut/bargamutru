@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Copy npm package files
 COPY package*.json ./
 
-RUN npm set progress=false && npm i --silent
+RUN npm set progress=false && npm ci --silent
 
 # Copy app files to out container
 COPY . .
