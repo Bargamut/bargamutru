@@ -1,28 +1,26 @@
 pipeline {
   agent {
-    docker {
-      image 'node:13.10.1-alpine'
-      args '-p 3000:3000'
-    }
+		label 'master'
+	}
 
-  }
   stages {
-    stage('Install') {
+    stage('Build Docker image') {
+			steps {
+      	sh 'scripts/build-container.sh'
+			}
+    }
+
+    stage('Delivery') {
       steps {
-        sh '''
-					npm cache clean --force
-					npm install
-				'''
+        input 'Do you want to delivery?'
+        sh 'scripts/delivery.sh'
       }
     }
 
-    stage('Build') {
-      steps {
-        sh 'npm build --production'
-      }
-    }
-  }
-  environment {
-    HOME = '.'
+		stage('Clean') {
+			steps {
+				sh 'scripts/clean-images.sh'
+			}
+		}
   }
 }
