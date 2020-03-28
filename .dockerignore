@@ -18,6 +18,7 @@
 # misc
 /coverage
 npm-debug.log
+.nyc_output
 
 # System Files
 .DS_Store
