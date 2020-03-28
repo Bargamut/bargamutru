@@ -2,13 +2,11 @@
 	import { socials } from "../stores.js";
 
 	import SocialCard from "./SocialCard.svelte";
-
-	console.log($socials);
 </script>
 
 <main class="container">
 	<section class="card-deck">
-		{#each $socials as socialItem}
+		{#each $socials as socialItem (socialItem.id)}
 			<SocialCard {...socialItem} />
 		{/each}
 	</section>
