@@ -1,5 +1,5 @@
 
-<footer class="bg-dark">
+<footer class="bg-dark-overrided">
 	<section class="container text-muted">
 		&copy; 2020 Paul "Bargamut" Petrov. All rights reserved.
 	</section>
@@ -12,6 +12,7 @@
 		width: 100%;
 		height: 60px;
 		line-height: 60px;
+		border-top: 1px solid var(--color-yellow-middle);
 	}
 
 	@media screen and (max-width: 420px) {
