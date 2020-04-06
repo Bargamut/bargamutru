@@ -14,6 +14,7 @@ pipeline {
 			when {
 				branch 'master'
 			}
+			
       steps {
         input 'Do you want to delivery?'
         sh 'scripts/delivery.sh'
