@@ -5,6 +5,9 @@ pipeline {
 
   stages {
     stage('Build Docker image') {
+			when {
+				branch 'master'
+			}
 			steps {
       	sh 'scripts/build-container.sh'
 			}
@@ -15,12 +18,14 @@ pipeline {
 				branch 'master'
 			}
       steps {
-        input 'Do you want to delivery?'
         sh 'scripts/delivery.sh'
       }
     }
 
-		stage('Clean') {
+		stage('Clean Docker images') {
+			when {
+				branch 'master'
+			}
 			steps {
 				sh 'scripts/clean-images.sh'
 			}
