@@ -3,11 +3,12 @@ pipeline {
 		label 'master'
 	}
 	parameters { 
-		choice(name: 'NODE_VERSION', choices: ['Node.js 12.11.0', 'NodeJS 13.7.0'], description: '') 
+		choice(name: 'NODE_VERSION', choices: ['NodeJS 13.12.0'], description: '') 
 	}
 
 	tools {
-		nodejs params.NODE_VERSION
+		// nodejs params.NODE_VERSION
+		nodejs "NodeJS 13.12.0"
 	}
 
   stages {
