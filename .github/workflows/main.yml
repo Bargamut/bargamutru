@@ -22,10 +22,11 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: npm install, npm run coverage
-        run: |
-          npm install
-          
+      - name: npm install
+        run: npm install
+
+      - name: npm run coverage
+        run: npm run coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
