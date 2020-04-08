@@ -7,8 +7,7 @@ pipeline {
 	}
 
 	tools {
-		// nodejs params.NODE_VERSION
-		nodejs "NodeJS 13.12.0"
+		nodejs params.NODE_VERSION
 	}
 
   stages {
@@ -17,9 +16,7 @@ pipeline {
 				stage("Start tests") {
 					steps{
 							echo "====++++executing Start tests++++===="
-							sh 'echo "$PATH"'
-							sh 'echo "$HOME"'
-							sh 'node --version'
+							sh 'yarn install'
 							sh 'yarn test'
 					}
 					post{
@@ -28,7 +25,7 @@ pipeline {
 							}
 							success{
 									echo "====++++Start tests executed successfully++++===="
-									sh 'npm run coverage'
+									sh 'yarn coverage'
 							}
 							failure{
 									echo "====++++Start tests execution failed++++===="
