@@ -7,22 +7,27 @@ pipeline {
 		stage('Tests') {
 			stages {
 				stage("Start tests") {
-						steps{
-								echo "====++++executing Start tests++++===="
-								sh "npm run test"
-						}
-						post{
-								always{
-										echo "====++++always++++===="
-								}
-								success{
-										echo "====++++Start tests executed successfully++++===="
-										sh "npm run coverage"
-								}
-								failure{
-										echo "====++++Start tests execution failed++++===="
-								}
-						}
+					environment {
+						CI_NODE_VERSION = '12.11.0'
+					}
+					steps{
+							echo "====++++executing Start tests++++===="
+							sh 'echo "$HOME"'
+							sh 'scripts/set-nvm.sh'
+							sh 'npm run test'
+					}
+					post{
+							always{
+									echo "====++++always++++===="
+							}
+							success{
+									echo "====++++Start tests executed successfully++++===="
+									sh 'npm run coverage'
+							}
+							failure{
+									echo "====++++Start tests execution failed++++===="
+							}
+					}
 				}
 			}
 		}
