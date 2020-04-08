@@ -9,6 +9,7 @@ pipeline {
 				stage("Start tests") {
 						steps{
 								echo "====++++executing Start tests++++===="
+								sh "npm run test"
 						}
 						post{
 								always{
@@ -16,6 +17,7 @@ pipeline {
 								}
 								success{
 										echo "====++++Start tests executed successfully++++===="
+										sh "npm run coverage"
 								}
 								failure{
 										echo "====++++Start tests execution failed++++===="
