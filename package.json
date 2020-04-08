@@ -4,8 +4,8 @@
   "description": "Мой персональный сайт",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha",
-    "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
