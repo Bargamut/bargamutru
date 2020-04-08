@@ -2,19 +2,24 @@ pipeline {
   agent {
 		label 'master'
 	}
+	parameters { 
+		choice(name: 'NODE_VERSION', choices: ['NodeJS 12.11.0', 'NodeJS 13.7.0'], description: '') 
+	}
+
+	tools {
+		nodejs params.NODE_VERSION
+	}
 
   stages {
 		stage('Tests') {
 			stages {
 				stage("Start tests") {
-					environment {
-						CI_NODE_VERSION = '12.11.0'
-					}
 					steps{
 							echo "====++++executing Start tests++++===="
+							sh 'echo "$PATH"'
 							sh 'echo "$HOME"'
-							sh 'scripts/set-nvm.sh'
-							sh 'npm run test'
+							sh 'node --version'
+							sh 'yarn test'
 					}
 					post{
 							always{
