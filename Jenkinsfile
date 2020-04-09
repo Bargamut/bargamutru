@@ -14,10 +14,14 @@ pipeline {
 		stage('Tests') {
 			stages {
 				stage("Start tests") {
+					environment { 
+						COVERALLS_REPO_TOKEN = credentials('COVERALLS_REPO_TOKEN') 
+					}
 					steps{
 							echo "====++++executing Start tests++++===="
-							sh 'yarn install'
-							sh 'yarn test'
+							echo "COVERALLS_REPO_TOKEN = ${COVERALLS_REPO_TOKEN}"
+							sh 'npm install'
+							sh 'npm test'
 					}
 					post{
 							always{
@@ -25,7 +29,7 @@ pipeline {
 							}
 							success{
 									echo "====++++Start tests executed successfully++++===="
-									sh 'yarn coverage'
+									sh 'npm run coverage'
 							}
 							failure{
 									echo "====++++Start tests execution failed++++===="
