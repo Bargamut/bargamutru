@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/Bargamut/bargamutru/badge.svg?branch=master)](https://coveralls.io/github/Bargamut/bargamutru?branch=master)
 
+![CI](https://github.com/Bargamut/bargamut-site/workflows/CI/badge.svg)
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
