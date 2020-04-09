@@ -2,25 +2,39 @@ pipeline {
   agent {
 		label 'master'
 	}
+	parameters { 
+		choice(name: 'NODE_VERSION', choices: ['NodeJS 13.12.0'], description: '') 
+	}
+
+	tools {
+		nodejs params.NODE_VERSION
+	}
 
   stages {
 		stage('Tests') {
 			stages {
 				stage("Start tests") {
-						steps{
-								echo "====++++executing Start tests++++===="
-						}
-						post{
-								always{
-										echo "====++++always++++===="
-								}
-								success{
-										echo "====++++Start tests executed successfully++++===="
-								}
-								failure{
-										echo "====++++Start tests execution failed++++===="
-								}
-						}
+					environment { 
+						COVERALLS_REPO_TOKEN = credentials('COVERALLS_REPO_TOKEN') 
+					}
+					steps{
+							echo "====++++executing Start tests++++===="
+							echo "COVERALLS_REPO_TOKEN = ${COVERALLS_REPO_TOKEN}"
+							sh 'npm install'
+							sh 'npm test'
+					}
+					post{
+							always{
+									echo "====++++always++++===="
+							}
+							success{
+									echo "====++++Start tests executed successfully++++===="
+									sh 'npm run coverage'
+							}
+							failure{
+									echo "====++++Start tests execution failed++++===="
+							}
+					}
 				}
 			}
 		}

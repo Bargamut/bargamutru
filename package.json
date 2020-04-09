@@ -4,7 +4,8 @@
   "description": "Мой персональный сайт",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha",
+		"test": "nyc mocha",
+		"coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
@@ -52,7 +53,8 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"

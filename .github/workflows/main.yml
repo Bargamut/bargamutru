@@ -7,23 +7,31 @@ on:
     branches: [ master ]
 
 jobs:
-  test_and_coverage:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+      - name: build
+        run: echo "Build"
+#   test_and_coverage:
+#     runs-on: ubuntu-latest
 
-      - name: test & coverage
-        run: |
-          npm install
-          npm run test
+#     steps:
+#       - uses: actions/checkout@v2
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Use Node.js 12.x
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: 12.x
+
+#       - name: test & coverage
+#         run: |
+#           npm install
+#           npm run test
+
+#       - name: Coveralls
+#         uses: coverallsapp/github-action@master
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
