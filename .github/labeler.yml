@@ -9,9 +9,9 @@ repo:
 
 # Add 'test' label to any change to *.spec.js files within the source dir
 test:
-	- src/**/*.spec.js
-	- test/**/*
+  - src/**/*.spec.js
+  - test/**/*
 
 ci:
-	- Jenkinsfile
-	- .github/**/*
+  - Jenkinsfile
+  - .github/**/*
