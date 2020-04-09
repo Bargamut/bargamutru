@@ -4,7 +4,7 @@
   "description": "Мой персональный сайт",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha",
+    "test": "nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -20,7 +20,27 @@
     "url": "https://bargamut.ru"
   },
   "private": true,
-  "license": "UNLICENSED",
+	"license": "UNLICENSED",
+	"nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 99,
+    "statements": 99,
+    "functions": 99,
+    "branches": 99,
+    "include": [
+      "src/libs/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.spec.js"
+    ],
+    "reporter": [
+			"html",
+      "text"
+    ],
+    "cache": true,
+    "all": true
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
