@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
@@ -36,7 +35,8 @@
     ],
     "reporter": [
 			"html",
-      "text"
+			"text",
+			"lcov"
     ],
     "cache": true,
     "all": true
