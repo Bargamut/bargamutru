@@ -15,3 +15,6 @@ test:
 ci:
   - Jenkinsfile
   - .github/**/*
+
+component:
+  - srt/components/**/*
