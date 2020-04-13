@@ -47,3 +47,4 @@ jobs:
         with:
           bump: ${{ steps.bump.outputs.match }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          prefix: v
