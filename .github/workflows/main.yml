@@ -35,6 +35,7 @@ jobs:
 #         uses: coverallsapp/github-action@master
 #         with:
 #           github-token: ${{ secrets.GITHUB_TOKEN }}
+  # SemVer bumper by labels
   bump:
     runs-on: ubuntu-latest
     steps:
