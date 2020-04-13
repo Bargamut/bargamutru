@@ -5,7 +5,9 @@
 </script>
 
 <section class="card {id} bg-transparent text-light border-0">
-	<img src="{img.src}" alt="{img.alt}" class="card-img">
+	<picture>
+		<img src="{img.src}" alt="{img.alt}" class="card-img">
+	</picture>
 
 	<div class="card-body">
 		<h5 class="card-title">{body.title}</h5>
