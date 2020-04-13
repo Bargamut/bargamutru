@@ -6,7 +6,7 @@
 
 <section class="card {id} bg-transparent text-light border-0">
 	<picture>
-		<img src="{img.src}" alt="{img.alt}" class="card-img">
+		<img src="{img.src}" alt="{img.alt}" class="card-img" loading="lazy">
 	</picture>
 
 	<div class="card-body">
