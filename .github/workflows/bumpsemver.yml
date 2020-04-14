@@ -7,6 +7,7 @@ on:
       - opened
       - labeled
       - unlabeled
+      - closed
 
 jobs:
   # SemVer bumper by labels
