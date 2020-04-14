@@ -1,4 +1,4 @@
-name: Bump SemVer
+name: Bump Semantic Version
 
 on:
   pull_request:
