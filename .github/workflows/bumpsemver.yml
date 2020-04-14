@@ -6,9 +6,10 @@ on:
   pull_request:
     branches: [ master ]
     types:
-      - opened
-      - labeled
-      - unlabeled
+      #- opened
+      #- labeled
+      #- unlabeled
+      - closed
 
 jobs:
   # SemVer bumper by labels
