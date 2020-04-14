@@ -1,13 +1,14 @@
 name: Bump Semantic Version
 
 on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
     types:
       - opened
       - labeled
       - unlabeled
-      - closed
 
 jobs:
   # SemVer bumper by labels
@@ -22,5 +23,3 @@ jobs:
         with:
           bump: ${{ steps.bump.outputs.match }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          prefix: v
-          preid: premajor,preminor,prepatch
