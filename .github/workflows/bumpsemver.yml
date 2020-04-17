@@ -1,8 +1,8 @@
 name: Bump Semantic Version
 
 on:
-  push:
-    branches: [ master ]
+#   push:
+#     branches: [ master ]
   pull_request:
     branches: [ master ]
     types:
