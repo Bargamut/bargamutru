@@ -4,7 +4,7 @@ pipeline:
   parameters: 
     - "choice(name: 'NODE_VERSION', choices: ['NodeJS 13.12.0'], description: '')"
   tools:
-    nodejs: "params.NODE_VERSION"
+    nodejs: "${params.NODE_VERSION}"
   stages:
     - stage: Tests
       stages:
