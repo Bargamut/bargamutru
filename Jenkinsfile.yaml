@@ -19,12 +19,12 @@ pipeline:
           post:
             always:
               - echo "====++++always++++===="
+              - echo "${params.NODE_VERSION}"
             success:
               - echo "====++++Start tests executed successfully++++===="
               # - sh 'npm run coverage'
             failure:
               - echo "====++++Start tests execution failed++++===="
-              - echo "${params.NODE_VERSION}"
     - stage: Build & deploy
       when:
         - branch 'master'
