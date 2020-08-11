@@ -14,7 +14,7 @@ pipeline:
           #
           steps:
             - echo "====++++executing Start tests++++===="
-            - echo "COVERALLS_REPO_TOKEN = ${COVERALLS_REPO_TOKEN}"
+            # - echo "COVERALLS_REPO_TOKEN = ${COVERALLS_REPO_TOKEN}"
             - sh 'npm install'
             - sh 'npm test'
           post:
