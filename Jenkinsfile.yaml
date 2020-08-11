@@ -13,19 +13,19 @@ pipeline:
           #   COVERALLS_REPO_TOKEN: credentials('COVERALLS_REPO_TOKEN')
           #
           steps:
-            script:
-              - withCredentials: "[string(credentialsId: 'COVERALLS_REPO_TOKEN', variable: 'COVERALLS_REPO_TOKEN')]"
-                script:
-                  - echo "====++++executing Start tests++++===="
-                  - echo "COVERALLS_REPO_TOKEN = ${COVERALLS_REPO_TOKEN}"
-                  - sh 'npm install'
-                  - sh 'npm test'
+            - echo "====++++executing Start tests++++===="
+            - echo "COVERALLS_REPO_TOKEN = ${COVERALLS_REPO_TOKEN}"
+            - sh 'npm install'
+            - sh 'npm test'
           post:
             always:
               - echo "====++++always++++===="
             success:
-              - echo "====++++Start tests executed successfully++++===="
-              - sh 'npm run coverage'
+              script:
+                - withCredentials: "[string(credentialsId: 'COVERALLS_REPO_TOKEN', variable: 'COVERALLS_REPO_TOKEN')]"
+                  script:
+                    - echo "====++++Start tests executed successfully++++===="
+                    - sh 'npm run coverage'
             failure:
               - echo "====++++Start tests execution failed++++===="
     - stage: Build & deploy
