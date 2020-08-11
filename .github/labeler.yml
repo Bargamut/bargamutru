@@ -13,8 +13,13 @@ test:
   - test/**/*
 
 ci:
-  - Jenkinsfile
+  - Jenkinsfile*
   - .github/**/*
+  
+cd:
+  - Dockerfile
+  - .dockerignore
+  - nginx-custom.conf
 
 component:
-  - srt/components/**/*
+  - src/components/**/*
