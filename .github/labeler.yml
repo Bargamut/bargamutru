@@ -14,12 +14,12 @@ test:
 
 ci:
   - Jenkinsfile*
-	- .github/**/*
-	
+  - .github/**/*
+  
 cd:
-	- Dockerfile
-	- .dockerignore
-	- nginx-custom.conf
+  - Dockerfile
+  - .dockerignore
+  - nginx-custom.conf
 
 component:
   - src/components/**/*
