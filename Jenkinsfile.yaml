@@ -1,8 +1,8 @@
 pipeline:
   agent:
     label: 'master'
-  parameters: 
-    - "choice(name: 'NODE_VERSION', choices: ['NodeJS 13.12.0'], description: '')"
+  # parameters: 
+  #   - "choice(name: 'NODE_VERSION', choices: ['NodeJS 13.12.0'], description: '')"
   tools:
     nodejs: NodeJS 13.12.0
   stages:
